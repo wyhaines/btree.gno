@@ -1,4 +1,24 @@
-// Package btree implements in-memory B-Trees of arbitrary degree.
+//////////
+//
+// Copyright 2014 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+//
+// Copyright 2024 New Tendermint
+//
+// This Gno port of the original Go BTree is substantially rewritten/reimplemented
+// from the original, primarily for clarity of code, clarity of documentation,
+// and for compatibility with Gno.
+//
+// Authors:
+//   Original version authors -- https://github.com/google/btree/graphs/contributors
+//   Kirk Haines <wyhaines@gmail.com>
+//
+//////////
+
+
+// The btree package implements in-memory B-Trees of arbitrary degree.
 //
 // It has a flatter structure than an equivalent red-black or other binary tree,
 // which may yield better memory usage and/or performance.
@@ -7,8 +27,11 @@ package btree
 
 import "sort"
 
-// *** Types
-
+//////////
+//
+// Types
+//
+//////////
 
 // BTree is an implementation of a B-Tree.
 //
@@ -97,6 +120,12 @@ type copyOnWriteContext struct {
 // a stored element from the tree. The function must return either a true or a false value.
 // True indicates that iteration should continue, while false indicates that it should halt.
 type RecordIterator func(i Record) bool
+
+//////////
+//
+// Functions
+//
+//////////
 
 // NewFreeNodeList creates a new free list.
 // size is the maximum size of the returned free list.
