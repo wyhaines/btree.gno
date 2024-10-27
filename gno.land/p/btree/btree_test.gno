@@ -5,7 +5,7 @@ import (
 	"sort"
 	"testing"
 
-	"gno.land/p/demo/btree"
+	"btree"
 )
 
 // Content represents a key-value pair where the Key can be either an int or string
