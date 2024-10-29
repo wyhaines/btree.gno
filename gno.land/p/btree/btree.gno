@@ -234,7 +234,7 @@ func (r *records) pop() Record {
 
 // This slice is intended only as a supply of records for the truncate function
 // that follows, and it should not be changed or altered.
-const emptyRecords = make(records, 32)
+var emptyRecords = make(records, 32)
 // truncate reduces the length of the slice to the specified index,
 // and clears the elements beyond that index to prevent memory leaks.
 // The index must be less than or equal to the current length of the slice.
@@ -329,7 +329,7 @@ func (childSlicePointer *children) pop() *node {
 
 // This slice is intended only as a supply of records for the truncate function
 // that follows, and it should not be changed or altered.
-const emptyChildren = make(children, 32)
+var emptyChildren = make(children, 32)
 // truncate reduces the length of the slice to the specified index,
 // and clears the elements beyond that index to prevent memory leaks.
 // The index must be less than or equal to the current length of the slice.
